@@ -1,0 +1,11 @@
+.DS_Store
+.dart_tool/
+build/
+coverage/
+mutation-test-report/
+*.iml
+.idea/
+.vscode/
+/docs/
+CHANGELOG.md
+packages/qr_scan_core/tool/
