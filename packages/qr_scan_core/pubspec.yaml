@@ -1,0 +1,19 @@
+name: qr_scan_core
+description: QR Code (Model 2, v1-40) scanner implemented from scratch in pure Dart.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.13.5
+
+# The core has NO runtime dependencies. Keep it that way.
+dependencies:
+
+dev_dependencies:
+  coverage: ^1.16.0
+  kiri_check: ^1.4.0
+  lints: ^6.0.0
+  mutation_test: ^1.8.1
+  path: ^1.9.1
+  qr: ^4.0.1 # test oracle only — never import from lib/
+  test: ^1.25.6
