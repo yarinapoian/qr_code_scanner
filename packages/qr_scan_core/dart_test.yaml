@@ -1,0 +1,16 @@
+# Tags: see docs/testing.md. Fast loop: dart test -x slow -x oracle
+tags:
+  unit:
+  property:
+  fuzz:
+  e2e:
+    timeout: 5x
+  differential:
+    timeout: 5x
+  slow:
+    timeout: 10x
+  oracle:
+    # Needs external tools (zxing-cpp, zbar, qrencode, segno). Tests must skip
+    # with a reason when the tool is missing.
+
+timeout: 30s
