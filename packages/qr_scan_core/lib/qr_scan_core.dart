@@ -18,3 +18,7 @@ export 'src/common/results.dart'
         UnsupportedMode,
         VersionMismatch;
 export 'src/decode/matrix_decoder.dart' show QrMatrixDecoder;
+export 'src/image/luminance_image.dart' show LuminanceImage;
+export 'src/scanner/qr_scanner.dart' show QrScanner;
+export 'src/scanner/scan_options.dart' show ScanOptions;
+export 'src/scanner/scan_report.dart' show ScanReport;
