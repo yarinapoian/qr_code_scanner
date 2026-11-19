@@ -6,6 +6,9 @@ mutation-test-report/
 *.iml
 .idea/
 .vscode/
+tool/.venv/
+packages/qr_scan_core/test/fixtures/corpus/zxing/
+mutation-test-report/
 /docs/
 CHANGELOG.md
 packages/qr_scan_core/tool/

@@ -1,0 +1,30 @@
+{
+  "own": {
+    "images": 22,
+    "read": 22
+  },
+  "zxing/qrcode-1": {
+    "images": 20,
+    "read": 20
+  },
+  "zxing/qrcode-2": {
+    "images": 35,
+    "read": 20
+  },
+  "zxing/qrcode-3": {
+    "images": 42,
+    "read": 42
+  },
+  "zxing/qrcode-4": {
+    "images": 48,
+    "read": 36
+  },
+  "zxing/qrcode-5": {
+    "images": 19,
+    "read": 19
+  },
+  "zxing/qrcode-6": {
+    "images": 15,
+    "read": 15
+  }
+}
