@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mutation testing of the decoding core (docs/testing.md, quality gates).
+     Run: dart run mutation_test mutation_test.xml --exclude-strings -f md
+     Each mutant runs the unit tests of decode/ and common/ (property tests
+     excluded for speed; they are slower but would only kill more). -->
+<mutations version="1.0">
+  <files>
+    <file>lib/src/common/gf256.dart</file>
+    <file>lib/src/decode/reed_solomon.dart</file>
+    <file>lib/src/decode/format_info.dart</file>
+    <file>lib/src/decode/version_info.dart</file>
+    <file>lib/src/decode/mask.dart</file>
+    <file>lib/src/decode/data_blocks.dart</file>
+    <file>lib/src/decode/codeword_placement.dart</file>
+    <file>lib/src/decode/bitstream.dart</file>
+    <file>lib/src/decode/matrix_decoder.dart</file>
+  </files>
+  <exclude>
+    <!-- comments and documentation -->
+    <token begin="//" end="\n"/>
+    <token begin="/*" end="*/"/>
+    <!-- imports; string literals are skipped with exclude-strings -->
+    <token begin="import" end=";"/>
+    <!-- guard against mutants that loop forever -->
+    <regex pattern="(while|for)\s*\(.*\)"/>
+  </exclude>
+  <commands>
+    <command group="unit" expected-return="0" working-directory="." timeout="120">dart test test/decode test/common -x property -x slow --reporter silent</command>
+  </commands>
+</mutations>
