@@ -10,7 +10,9 @@ environment:
 dependencies:
 
 dev_dependencies:
+  collection: ^1.19.1
   coverage: ^1.16.0
+  image: ^4.13.1
   kiri_check: ^1.4.0
   lints: ^6.0.0
   mutation_test: ^1.8.1
