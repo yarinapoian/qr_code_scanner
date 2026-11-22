@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Mutation testing of the decoding core (docs/testing.md, quality gates).
      Run: dart run mutation_test mutation_test.xml --exclude-strings -f md
-     Each mutant runs the unit tests of decode/ and common/ (property tests
-     excluded for speed; they are slower but would only kill more). -->
+     Commands run in order per mutant; the first one that fails kills it and
+     the rest are skipped. Fast unit tests go first; the decoder property
+     test (~30 s) only runs for mutants the unit tests missed. It is needed
+     because version_info, mask, data_blocks, codeword_placement and
+     matrix_decoder have no unit tests of their own since D7. -->
 <mutations version="1.0">
   <files>
     <file>lib/src/common/gf256.dart</file>
@@ -25,6 +28,7 @@
     <regex pattern="(while|for)\s*\(.*\)"/>
   </exclude>
   <commands>
-    <command group="unit" expected-return="0" working-directory="." timeout="120">dart test test/decode test/common -x property -x slow --reporter silent</command>
+    <command group="unit" expected-return="0" working-directory="." timeout="120">dart test test/decode test/common -t unit --reporter silent</command>
+    <command group="property" expected-return="0" working-directory="." timeout="240">dart test test/decode/matrix_decoder_property_test.dart --reporter silent</command>
   </commands>
 </mutations>
